@@ -1,0 +1,29 @@
+/* Add CSS styles for the sticky navigation bar */
+nav {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+nav li {
+    float: left;
+}
+
+nav li a {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    color: #333;
+}
+
+nav li a:hover {
+    background-color: #ddd;
+}
