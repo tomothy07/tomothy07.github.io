@@ -1,4 +1,8 @@
 /* Add CSS styles for the sticky navigation bar */
+body{
+    margin:0;
+}
+
 nav {
     position: sticky;
     top: 0;
