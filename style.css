@@ -33,3 +33,19 @@ nav li a {
 nav li a:hover {
     background-color: #ddd;
 }
+
+.img1{
+    /* The image used */
+    background-image: url("images/placeholder.jpg");
+  
+    /* Set a specific height */
+    min-height: 500px;
+}
+
+.parallax {
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
