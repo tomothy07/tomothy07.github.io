@@ -1,7 +1,14 @@
 /* Add CSS styles for the sticky navigation bar */
 body{
-   /*sdsdsdsd*/ 
    background-color: white;
+   /* background-image:url('https://t4.ftcdn.net/jpg/00/35/12/45/360_F_35124578_KGQaMUppAWYiRWph1gEIY1Ibql6a5mIG.jpg');
+   background-repeat: repeat; */
+
+   margin:0;
+}
+
+.margincontainer{
+    margin: 8px;
 }
 
 nav {
