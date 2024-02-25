@@ -15,12 +15,15 @@
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Proposal</a></li>
-            <li class="rightAlign"><a href="#">About the Authors</a></li>
+            <li><a id="scrollButton" data-id="#proposed">Proposal</a></li>
+            <li><a id="scrollButton" data-id="#survey">Our Survey</a></li>
+            <li class="rightAlign"><a href="#proposed">About the Authors</a></li>
         </ul>
     </nav>
-    <div class="image">
-        <image src="images/potato.jpg" width="100%" alt="potato"></image>
+    <div class="parallax">
+        <div class="caption">
+            <span class="border">Scroll Down for Potato 🥔</span>
+        </div>
     </div>
 
     <header>
@@ -33,6 +36,60 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquet lacinia, mauris nunc tincidunt urna, vitae aliquam nunc nisl in nunc.</p>
     </main>
 
+    
+    <main>
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquet lacinia, mauris nunc tincidunt urna, vitae aliquam nunc nisl in nunc.</p>
+    </main>
+    
+    <main>
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquet lacinia, mauris nunc tincidunt urna, vitae aliquam nunc nisl in nunc.</p>
+    </main>
+    
+    <main>
+        <h2>About Me</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, nunc id aliquet lacinia, mauris nunc tincidunt urna, vitae aliquam nunc nisl in nunc.</p>
+    </main>
+    <div class="zoomItem" id="proposed">
+        <div class="proposal">
+            <h2 style="text-align: center;">Proposal</h2>
+            <div class="proposalLeft">
+                <h3>What is your chosen infographic topic and why is this a topic you wish to research?</h3>
+                <p>The topic chosen for this infographic is the cooking and growing of potatoes. Our justification for this is simple; potatoes, a staple crop that feeds over a billion people worldwide, is threatened by climate change, and thus promoting awareness of potatoes is crucial in generating interest in researching methods of increasing their resilience to environmental factors (such as through the creation of GMO crops). We aim to achieve this by providing an educational resource to those who want to learn more about potatoes and also to persuade the general public to grow and cook their own potatoes, thus generating interest in the crisis that faces potatoes and global food security.</p>
+                
+                <h3>Purpose of infographic website – Persuade, Inform or Entertain? What does it aim to achieve?</h3>
+                <p>As stated previously, the aim of this infographic is to generate awareness of potatoes and the climate change driven crisis that it faces. The purpose of the infographic is to persuade and inform the general public on how to cook and grow their own potatoes, by providing information on how to grow potatoes and which climates and conditions potatoes prefer. Furthermore, the infographic also provides information on how to cook potatoes, as well as which potatoes, dishes and toppings are most popular, to aid unsure individuals on what to create. Finally, the infographic also addresses the stigma around GMO crops by supplying statistics of how many people support them.</p>
+    
+                <h3>Intended audience – Describe the type of students this infographic is targeted towards and why, eg age group, ethnicity, gender, interests, etc</h3>
+                <p>The intended audience for this infographic are young (late teens to early twenties) people who want to grow food at home, young people who are getting into cooking but aren’t exactly sure as to what they should create, and anyone looking for general information on potatoes. However, the general public is still considered as the promotion of solutions to the potato crisis are applicable to everyone. Gender and ethnicity aren’t important in this case, so long as the person has an interest in potatoes. Furthermore, this infographic is targeted towards younger individuals as they are less likely to know information on cooking and gardening when it comes to potatoes, on account of their young age and lack of life experience.</p>
+    
+                
+            </div>
+            <div class="proposalRight">
+                <h3>What information based on primary data are you aiming to collect and present on your infographic?</h3>
+                <p>We aim to collect data on people’s preferences on potato dishes and toppings, as well as how often they eat potatoes, what type of potatoes are their favourite and whether or not potatoes are actually their favourite vegetable. Furthermore, we also aim to collect data on whether or not people already grow potatoes, if they know how to grow potatoes and if they support GMO potato crops.</p>
+    
+                <h3>What information based on secondary data are you aiming to research and present on your website?</h3>
+                <p>We aim to collect data on how to grow potatoes, including which locations are ideal, nutrient, water and soil requirements and other generic tips and techniques. We also aim to collect enough data to assemble an engaging timeline of the history of the potato to inform the audience of the effect that it has had on the world. Finally, we aim to collect data that can inform readers on the threat posed to potatoes and global food security by climate change.</p>
+    
+                <h3>What will you do to ensure the integrity of your primary and secondary data (i.e reliable and free from bias)</h3>
+                <p>We intend on checking the author and date of publication, as well as any biases the author may have or potentially funding they may have received. We also intend to find additional sources that corroborate the same information, to confirm its accuracy.</p>
+                
+                <h3>What will you do to ensure the ethical collection, storage and use of collected data?</h3>
+                <p>In terms of the collection of data, we plan on asking a diverse range of people of different ages, genders and backgrounds. We also plan on creating a consent notice to allow participants in our surveys to consent to their data being recorded. The data collected will be stored securely in one of our computers and all data will be either collected anonymously or will be de-identified when presented in the infographic, to ensure that no one’s personal details are linked to the data in any way.  Finally, once the project is completed, all data collected from the survey will be deleted.</p>
+            
+            </div>
+        </div>
+    </div>
+
+    <button class="btn" id="survey" from PIL import Image
+
+    onclick="window.open('https://forms.gle/j3FN9BmqsBUDt7yN7', '_blank')">Take our survey!</button>
+    
+
+
+    <script src="script.js"></script>
     <footer>
         <p>&copy; 2022 My Website. All rights reserved.</p>
     </footer>

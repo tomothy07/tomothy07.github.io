@@ -1,21 +1,45 @@
-/* Add CSS styles for the sticky navigation bar */
 body{
    background-color: white;
-   /* background-image:url('https://t4.ftcdn.net/jpg/00/35/12/45/360_F_35124578_KGQaMUppAWYiRWph1gEIY1Ibql6a5mIG.jpg');
-   background-repeat: repeat; */
-
    margin:0;
+   
 }
+
+body, html {
+    height: 100%;
+  }
+  
+.parallax {
+/* The image used */
+background-image: url("images/potato.jpg");
+
+/* Full height */
+height: 100%;
+
+/* Create the parallax scrolling effect */
+background-attachment: fixed;
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .parallax {
+      background-attachment: scroll;
+    }
+  }
 
 .margincontainer{
     margin: 8px;
 }
 
+
 nav {
-    position: sticky;
+
+    position:fixed;
     top: 0;
     width: 100%;
     background-color: #f1f1f1;
+    z-index: 100;
 }
 
 nav ul {
@@ -45,26 +69,71 @@ nav li a:hover {
     background-color: #ddd;
 }
 
-.img1{
-    /* The image used */
-    background-image: url("images/placeholder.jpg");
-  
-    /* Set a specific height */
-    min-height: 500px;
+.caption {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
 }
 
-.parallax {
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.caption span.border {
+    background-color: #111;
+    color: #fff;
+    padding: 18px;
+    font-size: 25px;
+    letter-spacing: 10px;
 }
 
-.caption{
-    background-color: greenyellow;
+.zoomItem {
+    padding-top:100px;
+}
+
+.proposal {
+    background-color: #ffef92;
+    padding: 20px;
+    margin: auto;
+    border-radius: 10px;
+    width: 60%;
+    
+}
+
+.proposalRight {
+    width: 45%;
+    float: right;
+    padding: 10px;
+    text-align: justify;
+}
+.proposalLeft {
+    width:45%;
+    display: inline-block;
+    padding: 10px;
+    text-align: justify;
+}
+
+.btn {
+    border-radius: 28px;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 29px;
+    padding: 16px;
+    background: #a88a10;
+    text-decoration: none;
+    border: none; /* Remove default border */
+    cursor: pointer; /* Add cursor pointer */
+    transition: background-color 0.3s ease; /* Add transition */
+    margin: auto;
+    align-self: center;
+}
+
+.btn:hover {
+    background: #91770e;
+    text-decoration: none;
+}
+
+.btn:focus,
+.btn:active {
+    outline: none; /* Remove default focus and active outlines */
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5); /* Add custom focus styling */
 }
