@@ -6,7 +6,9 @@ body {
 
 .margincontainer {
     margin: 8px;
-    /*height: 100%;*/ /*makes parralax work*/
+
+    /*makes parralax work in container*/
+    /*height: 100%;*/
 }
 
 body,
@@ -34,7 +36,6 @@ html {
     }
   } */
 
-
 nav {
     position: fixed;
     top: 0;
@@ -60,6 +61,10 @@ nav li a {
     text-decoration: none;
     color: #333;
     font-size: 24px;
+}
+
+nav li a:hover {
+    cursor: pointer;
 }
 
 .rightAlign {

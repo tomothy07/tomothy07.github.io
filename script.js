@@ -1,7 +1,7 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var buttons = document.querySelectorAll('#scrollButton');
+    var buttons = document.querySelectorAll('.scrollButton');
     buttons.forEach(function(button) {
       button.addEventListener('click', function() {
         var targetId = this.getAttribute('data-id');
