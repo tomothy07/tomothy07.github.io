@@ -115,10 +115,13 @@
     <div id="home-screen">
         <button id="start-button" onclick="startGame()">Start</button>
         <button id="quit" onclick="window.location.href='tomothy07.github.io'">Quit</button>
+        <br>
+        <p>Rules: <br>You have 30 seconds to click on as many potatoes as possible. Smaller potatoes reward twice as many points as bigger potatoes.</p>
     </div>
     <script>
         let score = 0;
         let timeRemaining = 30;
+        let windowSize = `${window.innerHeight}px`;
         let highScore = localStorage.getItem('highScore') || 0; // Retrieve high score from localStorage, default to 0 if not available
         let gameStarted = false;
 
@@ -128,10 +131,11 @@
 
             const potato = document.createElement('div');
             potato.classList.add('potato');
-            potato.style.width = `${Math.random() * 100 + 25}px`; // Random width between 50px and 100px
+            potato.style.width = `${Math.random() * 50 + 50}px`; // Random width between 50px and 100px
             potato.style.height = potato.style.width; // Set height equal to width
             potato.style.left = `${Math.random() * 100}vw`; // Random horizontal position
             document.getElementById('potatoes').appendChild(potato);
+            let size = potato.style.width 
 
             // Random rotation direction (clockwise or anticlockwise)
             const rotationDirection = Math.random() < 0.5 ? '-' : '';
@@ -141,8 +145,8 @@
 
             // Animation to make the potato fall and rotate
             potato.animate([
-                { top: '-50px', transform: `rotate(${rotationDirection}${rotationSpeed}turn)` }, // Initial position above the viewport
-                { top: `${window.innerHeight}px`, transform: `rotate(${rotationDirection}${rotationSpeed}turn)` }  // Final position at the bottom of the viewport
+                { top: `-100px`, transform: `rotate(${rotationDirection}${rotationSpeed}turn)` }, // Initial position above the viewport
+                { top: windowSize, transform: `rotate(${rotationDirection}${rotationSpeed}turn)` }  // Final position at the bottom of the viewport
             ], {
                 duration: Math.random() * 3000 + 2000, // Random duration between 2000ms and 5000ms
                 easing: 'linear',
@@ -212,6 +216,8 @@
         // Function to start the game
         function startGame() {
             gameStarted = true;
+            score = 0;
+            timeRemaining = 30;
             document.getElementById('home-screen').style.display = 'none';
             document.getElementById('score').style.display = 'block';
             document.getElementById('timer').style.display = 'block';
