@@ -60,11 +60,16 @@
             transform: translate(-50%, -50%);
             text-align: center;
             display: flex;
+            flex-direction: column;
             align-items: center;
             align-content:space-evenly;
             padding: 20px 40px;
             font-size: 24px;
             z-index: 11;
+        }
+
+        #home-screen p {
+            color: white;
         }
 
         #quit, #start-button {
@@ -113,10 +118,11 @@
     </div>
     <div id="highscore"></div>
     <div id="home-screen">
-        <button id="start-button" onclick="startGame()">Start</button>
-        <button id="quit" onclick="window.location.href='tomothy07.github.io'">Quit</button>
-        <br>
-        <p>Rules: <br>You have 30 seconds to click on as many potatoes as possible. Smaller potatoes reward twice as many points as bigger potatoes.</p>
+        <div>
+            <button id="start-button" onclick="startGame()">Start</button>
+            <button id="quit" onclick="window.location.href='tomothy07.github.io'">Quit</button>
+        </div>
+        <p style="border: 2px solid white; padding: 20px;"><b style="font-size: 32px;">Rules: </b><br><br>You have 30 seconds to click on as many potatoes as possible. Smaller potatoes reward twice as many points as bigger potatoes.</p>
     </div>
     <script>
         let score = 0;
