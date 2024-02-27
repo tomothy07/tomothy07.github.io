@@ -50,6 +50,10 @@ html {
     }
   } */
 
+#scrollToTop{
+    cursor: pointer;
+}
+
 .active {
     background-color: #6d5300;
 
