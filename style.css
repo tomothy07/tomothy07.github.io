@@ -23,7 +23,7 @@ html {
 
 .hiddenLink {
     text-decoration: none;
-    cursor: none;
+    cursor:default;
 }
 
 .parallax {
