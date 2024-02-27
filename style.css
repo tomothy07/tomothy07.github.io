@@ -16,6 +16,15 @@ html {
     height: 100%;
 }
 
+.sidenavItem:hover {
+    transform: scale(1.15);
+    transition: transform 0.3s ease-out;
+}
+
+.hiddenLink {
+    text-decoration: none;
+}
+
 .parallax {
     /* The image used */
     background-image: url("images/potato.jpg");
@@ -36,12 +45,21 @@ html {
     }
   } */
 
+.active {
+    background-color: #6d5300;
+
+}
+
 nav {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: #f1f1f1;
     z-index: 100;
+    border-width: 0;
+    border-bottom-width: 5px;
+    border-style: solid;
+    border-color: #a88a10;
 }
 
 nav ul {
@@ -71,8 +89,12 @@ nav li a:hover {
     float: right;
 }
 
-nav li a:hover {
+nav li:not(.active) a:hover  {
     background-color: #ddd;
+}
+
+nav li.active a {
+    color: white;
 }
 
 .caption {

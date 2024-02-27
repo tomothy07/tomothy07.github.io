@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Falling Potatoes</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* to prevent scrollbars */
+            background-color: #87CEEB; /* sky blue */
+        }
+
+        #potatoes {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 10; /* make sure it's above other content */
+            overflow: hidden; /* to hide overflowed potatoes */
+        }
+
+        .potato {
+            position: absolute;
+            width: 50px; /* adjust according to your image size */
+            height: 50px; /* adjust according to your image size */
+            background-image: url('images/potato.svg');
+            background-size: cover;
+        }
+
+        .quit {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            z-index: 20000; /* make sure it's above other content */
+            padding: 10px 20px;
+        }
+
+        #score {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            font-size: 24px;
+            color: white;
+            display: none;
+            border: 2px solid white;
+            padding: 10px;
+            z-index: 11;
+            background-color: #87CEEB;
+        }
+
+        #home-screen {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            align-content:space-evenly;
+            padding: 20px 40px;
+            font-size: 24px;
+            z-index: 11;
+        }
+
+        #quit, #start-button {
+            padding: 30px 60px;
+            margin: 20px;
+            border-radius: 10px;
+            font-size: 24px;
+            border: 2px solid white;
+            color: white;
+            background-color: #87CEEB;
+        }
+
+        #quit:hover, #start-button:hover {
+            transform: scale(1.1);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #highscore {
+            position:fixed;
+            transform: translate(-50%, -50%);
+            top: 10%;
+            left: 50%;
+            font-size: 64px;
+            color: white;
+        }
+
+        #timer {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: white;
+            display: none;
+            border: 2px solid white;
+            padding: 10px;
+            z-index: 11;
+            background-color: #87CEEB;
+        }
+    </style>
+</head>
+<body>
+    <div id="potatoes"></div>
+    <div>
+        <div id="score">Score: 0</div>
+        <div id="timer">Time Remaining: 30 seconds</div>
+    </div>
+    <div id="highscore"></div>
+    <div id="home-screen">
+        <button id="start-button" onclick="startGame()">Start</button>
+        <button id="quit" onclick="window.location.href='index.html'">Quit</button>
+    </div>
+    <script>
+        let score = 0;
+        let timeRemaining = 30;
+        let highScore = localStorage.getItem('highScore') || 0; // Retrieve high score from localStorage, default to 0 if not available
+        let gameStarted = false;
+
+        // Function to create a new potato falling
+        function createPotato() {
+            if (!gameStarted) return;
+
+            const potato = document.createElement('div');
+            potato.classList.add('potato');
+            potato.style.width = `${Math.random() * 50 + 25}px`; // Random width between 50px and 100px
+            potato.style.height = potato.style.width; // Set height equal to width
+            potato.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+            document.getElementById('potatoes').appendChild(potato);
+
+            // Random rotation direction (clockwise or anticlockwise)
+            const rotationDirection = Math.random() < 0.5 ? '-' : '';
+
+            // Random rotation speed between 0.5 and 2 revolutions per second
+            const rotationSpeed = Math.random() * 5 + 0.5;
+
+            // Animation to make the potato fall and rotate
+            potato.animate([
+                { top: '-50px', transform: `rotate(${rotationDirection}${rotationSpeed}turn)` }, // Initial position above the viewport
+                { top: `${window.innerHeight}px`, transform: `rotate(${rotationDirection}${rotationSpeed}turn)` }  // Final position at the bottom of the viewport
+            ], {
+                duration: Math.random() * 3000 + 2000, // Random duration between 2000ms and 5000ms
+                easing: 'linear',
+                iterations: 1,
+                fill: 'forwards'
+            });
+
+            // Remove the potato from the DOM after the animation ends
+            potato.addEventListener('animationend', () => {
+                potato.remove();
+            });
+
+            // Add click event listener to the potato
+            potato.addEventListener('click', () => {
+                potato.remove();
+
+                if (potato.style.width.slice(0, -2) < 50) {
+                    score += 2;
+                } else {
+                    score++;
+                }
+                document.getElementById('score').textContent = `Score: ${score}`;
+            });
+        }
+
+        // Function to generate falling potatoes at intervals
+        function generatePotatoes() {
+            setInterval(createPotato, 100); // Adjust the interval as needed
+        }
+
+        
+
+        // Function to delete all potatoes
+        function deleteAllPotatoes() {
+            const potatoes = document.getElementsByClassName('potato');
+            while (potatoes.length > 0) {
+                potatoes[0].remove();
+            }
+        }
+
+        // Function to update the timer
+        function updateTimer() {
+            if (!gameStarted) return;
+
+            timeRemaining--;
+            document.getElementById('timer').textContent = `Time Remaining: ${timeRemaining} seconds`;
+
+            if (timeRemaining === 0) {
+                clearInterval(timerInterval);
+                document.getElementById('timer').textContent = `Time's up! Final Score: ${score}`;
+
+                if (score > highScore) {
+                    highScore = score;
+                    localStorage.setItem('highScore', highScore);
+                }
+
+                document.getElementById('highscore').textContent = `High Score: ${highScore}`;
+
+                gameStarted = false;
+                document.getElementById('score').style.display = 'none';
+                document.getElementById('timer').style.display = 'none';
+                document.getElementById('home-screen').style.display = 'block';
+                deleteAllPotatoes();
+            }
+        }
+
+        // Function to start the game
+        function startGame() {
+            gameStarted = true;
+            document.getElementById('home-screen').style.display = 'none';
+            document.getElementById('score').style.display = 'block';
+            document.getElementById('timer').style.display = 'block';
+            generatePotatoes();
+            timerInterval = setInterval(updateTimer, 1000);
+        }
+
+        // Initialize high score display
+        window.onload = function() {
+            document.getElementById('highscore').textContent = `High Score: ${highScore}`;
+
+        };
+
+    </script>
+</body>
+
+</html>
