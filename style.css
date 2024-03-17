@@ -150,6 +150,15 @@ nav li.active a {
     text-align: justify;
 }
 
+.infographiccontainer{
+    margin-left:100px;
+    margin-right:100px;
+}
+
+.infographic{
+    width:100%;
+}
+
 .btn {
     border-radius: 28px;
     font-family: Arial;
