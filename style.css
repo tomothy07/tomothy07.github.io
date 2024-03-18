@@ -150,7 +150,12 @@ nav li.active a {
     /* margin-top:100px;
     margin-left:100px;
     margin-right:100px; */
-    margin:100px;
+    /* margin:100px; */
+    padding:100px;
+    padding-left:100px;
+    padding-right:100px;
+    padding-top:50px;
+    padding-bottom:50px;
 }
 
 .infographic{
