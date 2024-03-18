@@ -40,12 +40,6 @@ html {
     background-size: cover;
 }
 
-/* @media only screen and (max-device-width: 1366px) {
-    .parallax {
-      background-attachment: scroll;
-    }
-  } */
-
 #scrollToTop{
     cursor: pointer;
 }
@@ -90,10 +84,6 @@ nav li a:hover {
     cursor: pointer;
 }
 
-.rightAlign {
-    float: right;
-}
-
 nav li:not(.active) a:hover  {
     background-color: #ddd;
 }
@@ -129,7 +119,6 @@ nav li.active a {
     margin: auto;
     border-radius: 10px;
     width: 60%;
-
 }
 
 .proposalRight {
@@ -147,10 +136,6 @@ nav li.active a {
 }
 
 .infographiccontainer{
-    /* margin-top:100px;
-    margin-left:100px;
-    margin-right:100px; */
-    /* margin:100px; */
     padding:100px;
     padding-left:100px;
     padding-right:100px;
