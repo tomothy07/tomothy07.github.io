@@ -182,7 +182,7 @@ nav li.active a {
     padding-top: 70px;
 }
 
-.infographiccontainer{
+.infographiccontainer:first-of-type{
     padding-top:50px;
 }
 
