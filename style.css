@@ -102,7 +102,8 @@ nav li.active a {
 }
 
 .caption span.border {
-    background-color: #111;
+    /* background-color: #111; */ /*no transparent*/
+    background-color: rgba(1,1,1,0.75); /*has transparent*/
     color: #fff;
     padding: 18px;
     font-size: 25px;
