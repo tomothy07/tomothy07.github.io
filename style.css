@@ -136,6 +136,11 @@ nav li.active a {
     text-align: justify;
 }
 
+.paragraph{
+    padding-top:50px;
+    /* padding-bottom:50px; */
+}
+
 .infographiccontainer{
     padding:100px;
     padding-left:100px;
