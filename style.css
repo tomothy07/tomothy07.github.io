@@ -3,6 +3,16 @@
     src: url('Montserrat.woff');
 }
 
+@font-face {
+    font-family: "Bradley Hand ITC V2";
+    src: url("https://db.onlinewebfonts.com/t/0252223e8c36008b595f5e379ad5e524.eot");
+    src: url("https://db.onlinewebfonts.com/t/0252223e8c36008b595f5e379ad5e524.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/0252223e8c36008b595f5e379ad5e524.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/0252223e8c36008b595f5e379ad5e524.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/0252223e8c36008b595f5e379ad5e524.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/0252223e8c36008b595f5e379ad5e524.svg#Bradley Hand ITC V2")format("svg");
+}
+
 body {
     background-color: #fefbf6;
     margin: 0;
@@ -14,8 +24,7 @@ html {
 
 footer{
     padding-top: 20px;
-    margin-left: 8%;
-    margin-right: 8%;
+    margin-left: 8px;
     padding-bottom: 10px;
     font-family: montserrat, Arial, Helvetica;
 }
@@ -116,6 +125,7 @@ nav li.active a {
     padding: 18px;
     font-size: 5rem;
     letter-spacing: 5px;
+    font-family: "Bradley Hand ITC V2";
 }
 
 .zoomItem {
