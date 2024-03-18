@@ -7,13 +7,6 @@ html {
     scroll-behavior: smooth;
 }
 
-
-.margincontainer {
-    margin: 8px;
-
-    /*makes parralax work in container*/
-    /*height: 100%;*/
-}
 footer{
     margin:8px;
 }
@@ -154,8 +147,10 @@ nav li.active a {
 }
 
 .infographiccontainer{
+    /* margin-top:100px;
     margin-left:100px;
-    margin-right:100px;
+    margin-right:100px; */
+    margin:100px;
 }
 
 .infographic{
